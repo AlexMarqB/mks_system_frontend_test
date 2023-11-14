@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ListedProductType } from "../../types";
 import * as S from "./styles";
 import { CartContext } from "@/context/CartContext";
+import Close from "../../../../public/close";
 
 interface CardProps {
 	item: ListedProductType;
@@ -12,7 +13,6 @@ export function CartListCard({ item }: CardProps) {
 	const { removeItem, addItem, excludeItem } = useContext(CartContext);
 
 	const screenWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-
 
 	return (
 		<S.Container>
@@ -43,7 +43,7 @@ export function CartListCard({ item }: CardProps) {
 				</S.MobileRemoveItem>
 			) : (
 				<S.RemoveItem onClick={() => excludeItem(item)}>
-					<img src="/close.svg" alt="remove item" />
+					<Close />
 				</S.RemoveItem>
 			)}
 		</S.Container>
