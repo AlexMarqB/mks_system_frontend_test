@@ -5,7 +5,7 @@ export const Main = styled.div`
   justify-content: center;
   align-items: center;
   width: auto;
-  height: auto;
+  height: 100vh;
 
   @media screen and (max-width: 600px) {
     overflow-y: auto;
